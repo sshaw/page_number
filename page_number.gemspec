@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Skye Shaw"]
   s.email       = "skye.shaw@gmail.com"
   s.files       = Dir["*.rb"]
+  s.require_paths = ["."]
   s.homepage    = "https://gist.github.com/sshaw/83f7ad7ce9c8f92a833f6d6530a2495c"
   s.license     = "MIT"
 end
