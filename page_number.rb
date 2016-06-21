@@ -1,7 +1,7 @@
 
 #
 # Utility methods for pagination page, and per page values.
-# https://gist.github.com/sshaw/83f7ad7ce9c8f92a833f6d6530a2495c/edit
+# https://gist.github.com/sshaw/83f7ad7ce9c8f92a833f6d6530a2495c
 #
 # By: Skye Shaw (https://github.com/sshaw)
 # Date: 2016-06-20
