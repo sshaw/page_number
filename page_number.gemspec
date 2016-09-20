@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = "page_number"
-  s.version     = "0.0.1"
-  s.date        = "2016-06-20"
+  s.version     = "0.0.2"
+  s.date        = "2016-09-19"
   s.summary     = "Utility methods for pagination page and per page that make sure you'll always have a valid number."
   s.description =<<-DESC
      Utility methods for pagination page and per page that make sure you'll always have a valid number.

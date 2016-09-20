@@ -35,6 +35,8 @@ module PageNumber
     max_page_number && n > max_page_number ? max_page_number : n
   end
 
+  alias :__page :page
+
   def per_page(n)
     n = __int(n)
     return default_per_page if n < 1
@@ -42,6 +44,7 @@ module PageNumber
     page_sizes && !page_sizes.include?(n) ? default_per_page : n
   end
 
+  alias :__per_page :per_page
 
   # Override these as you see fit.
   protected
