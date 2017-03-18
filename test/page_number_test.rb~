@@ -1,8 +1,0 @@
-require "minitest/autorun"
-
-class TestPageNumber
-  def before
-    @p = Object.new
-    @p.extend PageNumber
-  end
-end
