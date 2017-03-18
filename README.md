@@ -12,7 +12,7 @@ info.
 
 `PageNumber` provides two methods:
 
-* `page(n)`/`__page__(n)`
+* `page(n)`/`__page__(n)` (defaults to `1`)
 * `per_page(n)`/`__per_page__(n)` (defaults to `10`)
 
 To use, `include` or `extend` the `PageNumber` module:
@@ -48,6 +48,10 @@ class BaseController
 
   def default_per_page
     20
+  end
+
+  def default_page
+    2
   end
 
   def max_page_number
