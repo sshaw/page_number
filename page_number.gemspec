@@ -1,7 +1,10 @@
+require File.expand_path("../lib/page_number", __FILE__)
+require "date"
+
 Gem::Specification.new do |s|
   s.name        = "page_number"
-  s.version     = "0.0.2"
-  s.date        = "2016-09-19"
+  s.version     = PageNumber::VERSION
+  s.date        = Date.today
   s.summary     = "Utility methods for pagination page and per page that make sure you'll always have a valid number."
   s.description =<<-DESC
      Utility methods for pagination page and per page that make sure you'll always have a valid number.
@@ -9,8 +12,12 @@ Gem::Specification.new do |s|
   DESC
   s.authors     = ["Skye Shaw"]
   s.email       = "skye.shaw@gmail.com"
-  s.files       = Dir["*.rb"]
-  s.require_paths = ["."]
-  s.homepage    = "https://gist.github.com/sshaw/83f7ad7ce9c8f92a833f6d6530a2495c"
+  s.extra_rdoc_files = %w[README.md]
+  s.files       = Dir["lib/**/*.rb"]
+  s.test_files  = Dir["test/**/*.rb"]
+  s.homepage    = "https://github.com/sshaw/page_number"
   s.license     = "MIT"
+
+  s.add_development_dependency "rake"
+  s.add_development_dependency "minitest", "~> 5.0"
 end

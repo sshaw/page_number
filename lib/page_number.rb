@@ -1,11 +1,3 @@
-
-#
-# Utility methods for pagination page, and per page values.
-# https://gist.github.com/sshaw/83f7ad7ce9c8f92a833f6d6530a2495c
-#
-# By: Skye Shaw (https://github.com/sshaw)
-# Date: 2016-06-20
-#
 # === Usage
 #
 # require "page_number"
@@ -28,6 +20,8 @@
 #
 
 module PageNumber
+  VERSION = "0.1.0".freeze
+
   def page(n)
     n = __int(n)
     return default_page if n < 1
@@ -35,7 +29,7 @@ module PageNumber
     max_page_number && n > max_page_number ? max_page_number : n
   end
 
-  alias :__page :page
+  alias :__page__ :page
 
   def per_page(n)
     n = __int(n)
@@ -44,9 +38,8 @@ module PageNumber
     page_sizes && !page_sizes.include?(n) ? default_per_page : n
   end
 
-  alias :__per_page :per_page
+  alias :__per_page__ :per_page
 
-  # Override these as you see fit.
   protected
 
   def default_per_page
