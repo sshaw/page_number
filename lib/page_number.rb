@@ -1,22 +1,22 @@
 # === Usage
 #
-# require "page_number"
+#  require "page_number"
 #
-# class BaseController
-#   include PageNumber
+#  class BaseController
+#    include PageNumber
 #
-#   protected
+#    protected
 #
-#   def page_sizes
-#     [ 25, 50, 100 ]
-#   end
-# end
+#    def page_sizes
+#      [ 25, 50, 100 ]
+#    end
+#  end
 #
-# class SubController < BaseController
-#   def action
-#     User.all(:page => page(params[:page]), :per_page => per_page(params[:per_page]))
-#   end
-# end
+#  class SubController < BaseController
+#    def action
+#      User.all(:page => page(params[:page]), :per_page => per_page(params[:per_page]))
+#    end
+#  end
 #
 
 module PageNumber
