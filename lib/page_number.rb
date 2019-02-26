@@ -39,6 +39,8 @@ module PageNumber
     n
   end
 
+  alias :__page__! :page!
+
   def page(n)
     n = __int(n)
     return default_page if n < 1
