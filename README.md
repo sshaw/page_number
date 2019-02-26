@@ -10,9 +10,10 @@ info.
 
 ## Usage
 
-`PageNumber` provides two methods:
+`PageNumber` provides 3 methods:
 
 * `page(n)`/`__page__(n)` (defaults to `1`)
+* `page!(n)`/`__page__!(n)` (raises `PageNumber::PageInvalid` instead of returning default)
 * `per_page(n)`/`__per_page__(n)` (defaults to `10`)
 
 To use, `include` or `extend` the `PageNumber` module:

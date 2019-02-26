@@ -20,7 +20,24 @@
 #
 
 module PageNumber
-  VERSION = "0.1.0".freeze
+  VERSION = "0.2.0".freeze
+
+  class PageInvalid < StandardError
+    attr_reader :page
+
+    def initialize(message, page)
+      super message
+      @page = page
+    end
+  end
+
+  def page!(page)
+    n = __int(page)
+    raise PageInvalid.new("page must be > 0", page) if n < 1
+    raise PageInvalid.new("page must be < #{max_page_number}", page) if max_page_number && n > max_page_number
+
+    n
+  end
 
   def page(n)
     n = __int(n)

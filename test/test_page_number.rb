@@ -39,6 +39,34 @@ class TestPageNumber < MiniTest::Test
     assert_equal 2, @p.page(o)
   end
 
+  def test_page_exception_invalid_arg_raises_exception
+    [-1, 0, {}].each do |n|
+      ex = assert_raises PageNumber::PageInvalid do
+        @p.page!(n)
+      end
+
+      assert_equal n, ex.page
+    end
+
+    def @p.max_page_number
+      10
+    end
+
+    ex = assert_raises PageNumber::PageInvalid do
+      @p.page!(11)
+    end
+
+    assert_equal 11, ex.page
+  end
+
+  def test_page_exception_valid_arg_does_not_raise_exception
+    [1, 100, 500].each { |n| assert_equal n, @p.page!(n) }
+  end
+
+  def test_page_exception_converts_arg_to_fixnum
+    assert_equal 2, @p.page("2")
+  end
+
   def test_page_limits_arg_to_max_page_number
     # No max by default
     assert_equal 1_000, @p.page(1_000)
