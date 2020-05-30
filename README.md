@@ -60,6 +60,26 @@ class BaseController
   end
 ```
 
+### will_paginate & ActiveRecord Subclasses
+
+If you use `PageNumber` in a class context in model that uses will_paginate _and you subclasses_ that model you may receive the following error:
+```
+ArgumentError: wrong number of arguments (given 0, expected 1)
+	from /Users/sshaw/code/ruby/page_number/lib/page_number.rb:53:in `per_page'
+   	from /Users/sshaw/.rvm/gems/ruby-2.3.7/gems/will_paginate-3.1.6/lib/will_paginate/per_page.rb:18:in `inherited'
+    ...
+```
+
+This is because will_paginate is expecting its `per_page` method.
+
+One way to avoid this:
+```rb
+class YourModel < ApplicationRecord
+  Pager = Class.new { extend PageNumber }
+end
+```
+Now instead of calling `PageNumber`'s `per_page` as is you call via the `Pager` class: `Pager.per_page`
+
 ## Author
 
 Skye Shaw [skye.shaw AT gmail.com]
