@@ -23,13 +23,8 @@
         "ruby-version": "${{ matrix.ruby-version }}"
         "bundler-cache": true
 
-    - "name": "Install correct Bundler version"
-      "run": |
-        if [[ "${{ matrix.ruby-version }}" == 2.7* ]]; then
-          gem install bundler -v "~> 2.3"
-        else
-          gem install bundler
-        fi
+    - "name": "Install compatible Bundler version"
+      "run": "gem install bundler -v \"~> 2.4.0\""
 
     - "name": "Run tests"
       "run": "bundle exec rake"
