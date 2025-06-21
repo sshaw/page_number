@@ -1,7 +1,7 @@
 require "minitest/autorun"
 require "page_number"
 
-class TestPageNumber < MiniTest::Test
+class TestPageNumber < Minitest::Test
   def setup
     @p = Object.new
     @p.extend PageNumber
