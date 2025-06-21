@@ -1,6 +1,6 @@
 # PageNumber
 
-[![Build Status](https://travis-ci.org/sshaw/page_number.svg?branch=master)](https://travis-ci.org/sshaw/page_number)
+[![CI](https://github.com/sshaw/page_number/actions/workflows/ci.yml/badge.svg)](https://github.com/sshaw/page_number/actions/workflows/ci.yml)
 
 Utility methods for pagination page and per page that make sure you'll
 always have a valid number.
